@@ -1,65 +1,64 @@
-$(function () {
+//Contact form
+const contactForm = document.getElementById("contact-form");
+const formSuccess = document.getElementById("form-success");
 
-  $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
-    preventSubmit: true,
-    submitError: function ($form, event, errors) {
-    },
-    submitSuccess: function ($form, event) {
-      event.preventDefault();
-      const name = $("input#name").val();
-      const email = $("input#email").val();
-      const subject = $("input#subject").val();
-      const message = $("textarea#message").val();
+if (contactForm) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      $this = $("#sendMessageButton");
-      $this.prop("disabled", true);
+  const getField = (id) => document.getElementById(id)?.value.trim() ?? "";
 
-      $.ajax({
-        url: "contact.php",
-        type: "POST",
-        data: {
-          name: name,
-          email: email,
-          subject: subject,
-          message: message
-        },
-        cache: false,
-        success: function () {
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                  .append("</button>");
-          $('#success > .alert-success')
-                  .append("<strong>Your message has been sent. </strong>");
-          $('#success > .alert-success')
-                  .append('</div>');
-          $('#contactForm').trigger("reset");
-        },
-        error: function () {
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                  .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append('</div>');
-          $('#contactForm').trigger("reset");
-        },
-        complete: function () {
-          setTimeout(function () {
-            $this.prop("disabled", false);
-          }, 1000);
-        }
+  const validate = () => {
+    const fname = getField("fname");
+    const email = getField("email");
+    const enquiry = getField("enquiry");
+    const message = getField("message");
+    const gdpr = document.getElementById("gdpr")?.checked;
+
+    if (!fname || !email || !enquiry || !message) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+    if (!gdpr) {
+      alert("Please accept the GDPR consent to send your message.");
+      return false;
+    }
+    return true;
+  };
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    try {
+      const res = await fetch("/contact.php", {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
       });
-    },
-    filter: function () {
-      return $(this).is(":visible");
-    },
-  });
 
-  $("a[data-toggle=\"tab\"]").click(function (e) {
-      e.preventDefault();
-      $(this).tab("show");
+      if (res.ok) {
+        contactForm.style.display = "none";
+        formSuccess?.classList.remove("d-none");
+        formSuccess?.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        throw new Error("Server error");
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML =
+        'Send message <i class="fas fa-paper-plane ml-2"></i>';
+      alert(
+        "Something went wrong. Please try again or email us at info@brxconsulting.se",
+      );
+    }
   });
-});
-
-$('#name').focus(function () {
-  $('#success').html('');
-});
+}
