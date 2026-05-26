@@ -39,7 +39,7 @@ if (contactForm) {
     submitBtn.textContent = "Sending…";
 
     try {
-      const res = await fetch("/contact.php", {
+      const res = await fetch(contactForm.action, {
         method: "POST",
         body: new FormData(contactForm),
         headers: { Accept: "application/json" },
