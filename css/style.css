@@ -9126,3 +9126,14 @@ h6,
   font-size: 0.82rem;
   color: #aaa;
 }
+
+/* Utility: Bootstrap-5-style gap helper (adds fallback for older browsers) */
+.gap-3 {
+  gap: 1rem;
+}
+
+@supports not (gap: 1rem) {
+  .gap-3 > * + * {
+    margin-left: 1rem;
+  }
+}
