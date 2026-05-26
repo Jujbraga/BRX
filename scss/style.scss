@@ -141,22 +141,22 @@ h6,
 }
 
 .home-header {
-  @include header-img("../img/home.jpg");
+  @include header-img("../img/home.webp");
   @include header-flex(500px, 60vw, 800px);
 }
 
 .about-header {
-  @include header-img("../img/about.jpg");
+  @include header-img("../img/about.webp");
   @include header-flex(240px, 40vw, 400px);
 }
 
 .contact-header {
-  @include header-img("../img/contact.jpg");
+  @include header-img("../img/contact.webp");
   @include header-flex(240px, 40vw, 400px);
 }
 
 .career-header {
-  @include header-img("../img/career.jpg");
+  @include header-img("../img/career.webp");
   @include header-flex(240px, 40vw, 400px);
 }
 
