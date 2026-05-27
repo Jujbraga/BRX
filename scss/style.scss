@@ -69,23 +69,6 @@ $border-radius: 5px;
 @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/utilities";
 
-@mixin header-img($img-mobile, $img-desktop) {
-  // Mobile
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(#{$img-mobile});
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  // Desktop
-  @media (min-width: 992px) {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(#{$img-desktop});
-    margin-top: -45px;
-  }
-}
-
 @mixin header-flex($min, $preferred, $max) {
   height: clamp($min, $preferred, $max);
   display: flex;
@@ -136,13 +119,6 @@ h6,
   margin-bottom: 30px;
   border-radius: 30px;
   height: 50px;
-}
-
-.file-input {
-  height: 90px;
-  @media (min-width: 992px) {
-    height: 50px;
-  }
 }
 
 .contact-form {
@@ -196,34 +172,75 @@ h6,
 }
 
 .home-header {
-  @include header-img(
-    "https://www.brxconsulting.se/img/home-mobile.webp",
-    "https://www.brxconsulting.se/img/home.webp"
-  );
+  position: relative;
+  overflow: hidden;
+  background-color: $primary;
+  margin-top: -45px;
   @include header-flex(500px, 60vw, 800px);
 }
 
-.about-header {
-  @include header-img(
-    "https://www.brxconsulting.se/img/about.webp",
-    "https://www.brxconsulting.se/img/about.webp"
-  );
-  @include header-flex(240px, 40vw, 400px);
+.home-header::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.contact-header {
-  @include header-img(
-    "https://www.brxconsulting.se/img/contact.webp",
-    "https://www.brxconsulting.se/img/contact.webp"
-  );
-  @include header-flex(240px, 40vw, 400px);
+.home-header-picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
+.home-header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.home-header > div {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header {
+  position: relative;
+  overflow: hidden;
+  background-color: $primary;
+  margin-top: -45px;
+}
+
+.page-header::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.page-header-picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.page-header > div {
+  position: relative;
+  z-index: 1;
+}
+
+.about-header,
+.contact-header,
 .career-header {
-  @include header-img(
-    "https://www.brxconsulting.se/img/career.webp",
-    "https://www.brxconsulting.se/img/career.webp"
-  );
   @include header-flex(240px, 40vw, 400px);
 }
 

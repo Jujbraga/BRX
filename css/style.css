@@ -6773,15 +6773,6 @@ h6,
   height: 50px;
 }
 
-.file-input {
-  height: 90px;
-}
-@media (min-width: 992px) {
-  .file-input {
-    height: 50px;
-  }
-}
-
 .contact-form {
   padding: 1rem;
 }
@@ -6833,18 +6824,10 @@ h6,
   }
 }
 .home-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/home-mobile.webp);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-@media (min-width: 992px) {
-  .home-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/home.webp);
-    margin-top: -45px;
-  }
-}
-.home-header {
+  position: relative;
+  overflow: hidden;
+  background-color: #151b2d;
+  margin-top: -45px;
   height: clamp(500px, 60vw, 800px);
   display: flex;
   flex-direction: column;
@@ -6853,60 +6836,67 @@ h6,
   text-align: center;
 }
 
-.about-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/about.webp);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-@media (min-width: 992px) {
-  .about-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/about.webp);
-    margin-top: -45px;
-  }
-}
-.about-header {
-  height: clamp(240px, 40vw, 400px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.home-header::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.contact-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/contact.webp);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-@media (min-width: 992px) {
-  .contact-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/contact.webp);
-    margin-top: -45px;
-  }
-}
-.contact-header {
-  height: clamp(240px, 40vw, 400px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.home-header-picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.career-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/career.webp);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+.home-header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
-@media (min-width: 992px) {
-  .career-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/career.webp);
-    margin-top: -45px;
-  }
+
+.home-header > div {
+  position: relative;
+  z-index: 1;
 }
+
+.page-header {
+  position: relative;
+  overflow: hidden;
+  background-color: #151b2d;
+  margin-top: -45px;
+}
+
+.page-header::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.page-header-picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.page-header > div {
+  position: relative;
+  z-index: 1;
+}
+
+.about-header,
+.contact-header,
 .career-header {
   height: clamp(240px, 40vw, 400px);
   display: flex;

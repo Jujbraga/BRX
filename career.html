@@ -37,13 +37,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </noscript>
 
-    <link
-      rel="preload"
-      as="image"
-      fetchpriority="high"
-      href="https://www.brxconsulting.se/img/career.webp"
-      type="image/webp"
-    />
     <!-- Critical CSS (inlined small file) -->
     <link href="css/critical.css" rel="stylesheet">
 
@@ -93,7 +86,25 @@
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
-    <div class="container-fluid career-header">
+    <header class="career-header page-header">
+      <picture class="page-header-picture" aria-hidden="true">
+        <source
+          media="(min-width: 992px)"
+          srcset="img/career.webp"
+          type="image/webp"
+        />
+        <img
+          class="page-header-image"
+          src="img/career.webp"
+          width="640"
+          height="427"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
       <div class="p-3" style="max-width: 900px">
         <h1 class="text-white display-3 mt-lg-5">Career</h1>
         <div class="d-inline-flex align-items-center text-white">
@@ -102,7 +113,7 @@
           <p class="m-0">Career</p>
         </div>
       </div>
-    </div>
+    </header>
     <!-- Page Header End -->
 
     <!-- Why Join Us Start -->

@@ -74,14 +74,6 @@
       />
     </noscript>
 
-    <link
-      rel="preload"
-      as="image"
-      fetchpriority="high"
-      href="https://www.brxconsulting.se/img/home.webp"
-      type="image/webp"
-    />
-
     <!-- Critical CSS (inlined small file) -->
     <link href="css/critical.css" rel="stylesheet" />
 
@@ -137,6 +129,24 @@
 
     <!-- Header start -->
     <header class="home-header">
+      <picture class="home-header-picture" aria-hidden="true">
+        <source
+          media="(min-width: 992px)"
+          srcset="img/home.webp"
+          type="image/webp"
+        />
+        <img
+          class="home-header-image"
+          src="img/home-mobile.webp"
+          width="899"
+          height="600"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
       <div class="p-3" style="max-width: 900px">
         <h1 class="display-3 text-white mb-md-4">
           Skilled Engineering and IT Consultants for Automotive Business
