@@ -1,0 +1,106 @@
+/* Critical CSS: above-the-fold, minimal set to paint navbar, hero, typography and buttons */
+/* Keep this file small. Source of truth: scss/style.scss */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f3f6ff;
+  color: #555555;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar / header basics */
+.nav-bar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  background: #151b2d; /* $primary */
+}
+
+.navbar {
+  background: #fff;
+}
+
+.navbar-brand img {
+  height: 60px;
+  display: block;
+}
+
+.navbar-nav .nav-link {
+  padding: 30px 30px;
+  color: #333333;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #ef6c35; /* $warning */
+}
+
+/* Hero / header image and layout */
+.home-header,
+.about-header,
+.career-header,
+.contact-header {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-header {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.brxconsulting.se/img/home.webp');
+  height: clamp(500px, 60vw, 800px);
+}
+
+.display-3 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+/* Buttons (primary CTA) */
+.btn {
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 100px;
+}
+
+.btn-warning {
+  background-color: #ef6c35;
+  border-color: #ef6c35;
+  color: #fff;
+}
+
+.btn-outline-warning {
+  color: #ef6c35;
+  border: 1px solid #ef6c35;
+  background: transparent;
+}
+
+/* Simple utility for visible images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hide back-to-top by default until JS shows it */
+#btn-back-to-top { display: none; }
+
+/* Basic responsive tweaks to avoid layout jump at small widths */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link { padding: 10px 0; }
+}
+
+/* Keep critical CSS under a few KB */
