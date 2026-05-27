@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Send index.html to the site root.
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Redirect direct .html requests to clean URLs.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteCond %1 !^index$
+RewriteRule ^(.+?)\.html$ /$1 [R=301,L]
+
+# Internally map clean URLs back to matching .html files.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
