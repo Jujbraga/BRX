@@ -62,19 +62,26 @@ $border-radius: 5px;
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/utilities";
 
-@mixin header-img($img) {
+@mixin header-img($img-mobile, $img-desktop) {
+  // Mobile
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(#{$img});
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(#{$img-mobile});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
+  // Desktop
   @media (min-width: 992px) {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(#{$img-desktop});
     margin-top: -45px;
   }
 }
@@ -189,22 +196,34 @@ h6,
 }
 
 .home-header {
-  @include header-img("https://www.brxconsulting.se/img/home.webp");
+  @include header-img(
+    "https://www.brxconsulting.se/img/home-mobile.webp",
+    "https://www.brxconsulting.se/img/home.webp"
+  );
   @include header-flex(500px, 60vw, 800px);
 }
 
 .about-header {
-  @include header-img("https://www.brxconsulting.se/img/about.webp");
+  @include header-img(
+    "https://www.brxconsulting.se/img/about.webp",
+    "https://www.brxconsulting.se/img/about.webp"
+  );
   @include header-flex(240px, 40vw, 400px);
 }
 
 .contact-header {
-  @include header-img("https://www.brxconsulting.se/img/contact.webp");
+  @include header-img(
+    "https://www.brxconsulting.se/img/contact.webp",
+    "https://www.brxconsulting.se/img/contact.webp"
+  );
   @include header-flex(240px, 40vw, 400px);
 }
 
 .career-header {
-  @include header-img("https://www.brxconsulting.se/img/career.webp");
+  @include header-img(
+    "https://www.brxconsulting.se/img/career.webp",
+    "https://www.brxconsulting.se/img/career.webp"
+  );
   @include header-flex(240px, 40vw, 400px);
 }
 

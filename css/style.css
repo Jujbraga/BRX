@@ -2448,6 +2448,34 @@ input[type=button].btn-block {
   width: 100%;
 }
 
+.fade {
+  transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+    transition: none;
+  }
+}
+.fade:not(.show) {
+  opacity: 0;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -6805,13 +6833,14 @@ h6,
   }
 }
 .home-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/home.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/home-mobile.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 @media (min-width: 992px) {
   .home-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/home.webp);
     margin-top: -45px;
   }
 }
@@ -6832,6 +6861,7 @@ h6,
 }
 @media (min-width: 992px) {
   .about-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/about.webp);
     margin-top: -45px;
   }
 }
@@ -6852,6 +6882,7 @@ h6,
 }
 @media (min-width: 992px) {
   .contact-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/contact.webp);
     margin-top: -45px;
   }
 }
@@ -6872,6 +6903,7 @@ h6,
 }
 @media (min-width: 992px) {
   .career-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.brxconsulting.se/img/career.webp);
     margin-top: -45px;
   }
 }
