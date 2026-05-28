@@ -30,24 +30,61 @@
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link
+      rel="preload"
+      href="assets/fonts/poppins-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/poppins-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-brands-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
 
     <!-- Font Awesome (deferred) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      />
     </noscript>
 
     <!-- Critical CSS (inlined small file) -->
-    <link href="css/critical.css" rel="stylesheet">
+    <link href="css/critical.css" rel="stylesheet" />
 
     <!-- Full stylesheet (deferred to avoid render-blocking) -->
-    <link href="css/style.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link
+      href="css/style.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <noscript>
-      <link href="css/style.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet" />
     </noscript>
   </head>
   <body>
@@ -98,9 +135,9 @@
         />
         <img
           class="page-header-image"
-          src="img/about-mobile.webp"
-          width="900"
-          height="600"
+          src="img/about-sm.webp"
+          width="360"
+          height="240"
           alt=""
           aria-hidden="true"
           fetchpriority="high"
@@ -151,14 +188,26 @@
             <a href="contact.html" class="btn btn-primary mt-2">Get in touch</a>
           </div>
           <div class="col-lg-6 pl-lg-5">
-            <img
-              src="img/home-about.webp"
-              width="620"
-              height="960"
-              alt="BRX Consulting team"
-              class="img-fluid rounded shadow"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(max-width: 991px)"
+                srcset="img/home-about-sm.webp"
+              />
+              <img
+                src="img/home-about-lg.webp"
+                srcset="
+                  img/home-about-sm.webp 184w,
+                  img/home-about-lg.webp 435w
+                "
+                sizes="(max-width: 991px) 184px, 435px"
+                width="435"
+                height="653"
+                alt="BRX Consulting team"
+                class="img-fluid rounded shadow"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
       </div>
