@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -15,7 +16,6 @@
 
       gtag("config", "G-FSFPS72T0J");
     </script>
-    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -33,18 +33,8 @@
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Local fonts -->
-    <link
-      rel="preload"
-      href="assets/fonts/poppins-400.ttf"
-      as="font"
-      type="font/ttf"
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/poppins-700.ttf"
-      as="font"
-      type="font/ttf"
-    />
+    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
     <link
       rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/webfonts/fa-solid-900.woff2"
@@ -368,9 +358,12 @@
                 <a
                   href="https://www.linkedin.com/company/brxconsultingsweden/"
                   target="_blank"
+                  rel="noopener"
                   class="a-social"
-                  ><i class="fa-brands fa-linkedin fa-xl"></i
-                ></a>
+                  aria-label="BRX Consulting on LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin fa-xl"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -390,6 +383,7 @@
       type="button"
       class="btn btn-warning btn-floating px-3"
       id="btn-back-to-top"
+      aria-label="Back to top"
     >
       <i class="fas fa-arrow-up"></i>
     </button>

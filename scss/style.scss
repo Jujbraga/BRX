@@ -23,7 +23,7 @@ $border-radius: 5px;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/poppins-400.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-400.woff2") format("woff2");
 }
 
 @font-face {
@@ -31,7 +31,7 @@ $border-radius: 5px;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../assets/fonts/poppins-500.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-500.woff2") format("woff2");
 }
 
 @font-face {
@@ -39,7 +39,7 @@ $border-radius: 5px;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../assets/fonts/poppins-600.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-600.woff2") format("woff2");
 }
 
 @font-face {
@@ -47,7 +47,7 @@ $border-radius: 5px;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../assets/fonts/poppins-700.ttf") format("truetype");
+  src: url("../assets/fonts/poppins-700.woff2") format("woff2");
 }
 
 /* Selective Bootstrap imports to reduce unused CSS footprint.
