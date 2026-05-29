@@ -30,12 +30,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- Font Awesome removed: using local SVG sprite in assets/icons-v4.svg -->
 
     <!-- Critical CSS (inlined small file) -->
     <link href="css/critical.css" rel="stylesheet" />
@@ -196,7 +191,14 @@
             <div
               class="value-card h-100 p-4 text-center bg-white rounded shadow-sm"
             >
-              <i class="fas fa-handshake fa-2x text-primary mb-3"></i>
+              <svg
+                class="icon fa-2x text-primary mb-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-handshake" />
+              </svg>
               <h5>Long-term relationships</h5>
               <p class="text-muted">
                 We don't place consultants and disappear. We invest in lasting
@@ -209,7 +211,14 @@
             <div
               class="value-card h-100 p-4 text-center bg-white rounded shadow-sm"
             >
-              <i class="fas fa-user-check fa-2x text-primary mb-3"></i>
+              <svg
+                class="icon fa-2x text-primary mb-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-user-check" />
+              </svg>
               <h5>People first</h5>
               <p class="text-muted">
                 Every consultant at BRX is heard, supported and encouraged to
@@ -222,7 +231,14 @@
             <div
               class="value-card h-100 p-4 text-center bg-white rounded shadow-sm"
             >
-              <i class="fas fa-globe fa-2x text-primary mb-3"></i>
+              <svg
+                class="icon fa-2x text-primary mb-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-globe" />
+              </svg>
               <h5>International expertise</h5>
               <p class="text-muted">
                 Our experience spans Sweden, Germany, Brazil, France and beyond.
@@ -253,54 +269,122 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-truck text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-truck" />
+              </svg>
               <small>Heavy &amp; Medium Duty Trucks</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-car text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-car" />
+              </svg>
               <small>Passenger Cars</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-wind text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag h-100 p-4 text-center bg-white rounded shadow-sm d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-wind" />
+              </svg>
               <small>HVAC Systems</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-chair text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-chair" />
+              </svg>
               <small>Car Seats</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-plane text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-plane" />
+              </svg>
               <small>Aircraft Interiors</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i class="fas fa-bolt text-primary mb-2 d-block fa-lg mt-3"></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-bolt" />
+              </svg>
               <small>Electromobility</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i
-                class="fas fa-laptop-code text-primary mb-2 d-block fa-lg mt-3"
-              ></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-laptop" />
+              </svg>
               <small>Embedded Software</small>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-3 mb-3 text-center">
-            <div class="industry-tag p-3 bg-white rounded shadow-sm h-100">
-              <i
-                class="fas fa-project-diagram text-primary mb-2 d-block fa-lg mt-3"
-              ></i>
+            <div
+              class="industry-tag p-3 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center"
+            >
+              <svg
+                class="icon text-primary mb-2 mt-3"
+                width="2.5em"
+                height="2em"
+                aria-hidden="true"
+              >
+                <use href="assets/icons-v4.svg#icon-project-diagram" />
+              </svg>
               <small>Project &amp; Programme Management</small>
             </div>
           </div>
@@ -341,7 +425,14 @@
                   class="a-social"
                   aria-label="BRX Consulting on LinkedIn"
                 >
-                  <i class="fa-brands fa-linkedin fa-xl"></i>
+                  <svg
+                    class="icon fa-xl"
+                    width="1.5em"
+                    height="1.5em"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons-v4.svg#icon-linkedin" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -362,7 +453,9 @@
       id="btn-back-to-top"
       aria-label="Back to top"
     >
-      <i class="fas fa-arrow-up"></i>
+      <svg class="icon" width=".75em" height="1em" aria-hidden="true">
+        <use href="assets/icons-v4.svg#icon-arrow-up" />
+      </svg>
     </button>
 
     <script src="js/main.js"></script>

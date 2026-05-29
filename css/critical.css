@@ -126,6 +126,14 @@ body {
   z-index: 1;
 }
 
+/* Ensure any remaining <i class="fa-..."> placeholders keep layout stable */
+i[class*="fa"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
 .about-header,
 .contact-header,
 .career-header {

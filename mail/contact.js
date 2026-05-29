@@ -55,7 +55,7 @@ if (contactForm) {
     } catch {
       submitBtn.disabled = false;
       submitBtn.innerHTML =
-        'Send message <i class="fas fa-paper-plane ml-2"></i>';
+        'Send message <svg class="icon ml-2" aria-hidden="true"><use href="assets/icons-v4.svg#icon-paper-plane"></use></svg>';
       alert(
         "Something went wrong. Please try again or email us at info@brxconsulting.se",
       );

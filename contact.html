@@ -16,22 +16,34 @@
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      rel="preload"
+      href="assets/fonts/poppins-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <link
+      rel="preload"
+      href="assets/fonts/poppins-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Font Awesome removed: using local SVG sprite in assets/icons-v4.svg -->
 
     <!-- Critical CSS (inlined small file) -->
-    <link href="css/critical.css" rel="stylesheet">
+    <link href="css/critical.css" rel="stylesheet" />
 
     <!-- Full stylesheet (deferred to avoid render-blocking) -->
-    <link href="css/style.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link
+      href="css/style.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <noscript>
-      <link href="css/style.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet" />
     </noscript>
   </head>
   <body>
@@ -264,7 +276,14 @@
                   class="btn btn-primary contact-submit-btn"
                 >
                   Send message
-                  <i class="fas fa-paper-plane ml-2"></i>
+                  <svg
+                    class="icon ml-2"
+                    width="1em"
+                    height="1em"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons-v4.svg#icon-paper-plane" />
+                  </svg>
                 </button>
                 <span class="contact-reply-note ml-3"
                   >We typically reply within 1–2 business days.</span
@@ -298,7 +317,14 @@
                   class="a-social"
                   aria-label="BRX Consulting on LinkedIn"
                 >
-                  <i class="fa-brands fa-linkedin fa-xl"></i>
+                  <svg
+                    class="icon fa-xl"
+                    width="1.5em"
+                    height="1.5em"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons-v4.svg#icon-linkedin" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -321,7 +347,9 @@
       id="btn-back-to-top"
       aria-label="Back to top"
     >
-      <i class="fas fa-arrow-up"></i>
+      <svg class="icon" width=".75em" height="1em" aria-hidden="true">
+        <use href="assets/icons-v4.svg#icon-arrow-up" />
+      </svg>
     </button>
 
     <!-- Contact Javascript File -->
